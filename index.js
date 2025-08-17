@@ -60,7 +60,7 @@ try {
     )
 
 } catch (error) {
-    res.status(500).json({success:false,message:"not connected"})
+    res.status(500).json({success:false,message:"not connected Successfully"})
 }
 
 

@@ -33,7 +33,7 @@ export function createUser(req,res){
 
 
 export function loginUser(req,res){
-    User.findOne(
+    User.findOne( 
         {
             email : req.body.email
         }

@@ -25,17 +25,20 @@ app.use(
                     if(decoded == null){
                         res.json({
                             message: "Invalid token please login again"
-                        })
-                        return
+                        });
+                        return;
                     }else{
-                        req.user = decoded
+                        req.user = decoded;
+                        next();
                     }
                 }
-            )
+            );
+        }else{
+            next();
         }
-        next()
+        
     }
-)
+);
 
 /*
 function success(){

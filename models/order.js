@@ -11,11 +11,11 @@ const orderSchema = new mongoose.Schema(
         items : {
             type : [
                 {
-                    ProductId : {
+                    productID : {
                         type : String,
                         required : true
                     },
-                    quentity : {
+                    quantity : {
                         type : Number,
                         required : true
                     },

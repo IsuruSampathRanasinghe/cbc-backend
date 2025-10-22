@@ -56,6 +56,7 @@ export function loginUser(req,res){
                             lastName: user.lastName,
                             role: user.role,
                             isEmailVerified: user.isEmailVerified,
+                            image: user.image,
                         },
                         process.env.JWT_SECRET
                     )
@@ -104,4 +105,19 @@ export function isCustomer(req){
         return false;
     }
     return true;
+}
+
+export function getUser(req, res){
+    if(req.user == null){
+        res.status(401).json(
+            {
+                message: "Unauthorized"
+            }
+        )
+        return;
+    }else{
+        res.json(
+            req.user
+        )
+    }
 }
